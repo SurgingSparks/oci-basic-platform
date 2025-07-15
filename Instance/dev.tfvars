@@ -1,0 +1,9 @@
+compartment_ocid         = "ocid1.compartment.oc1..your_compartment_ocid"
+availability_domain      = "your-AD-name"
+subnet_ocid              = "ocid1.subnet.oc1..your_subnet_ocid"
+instance_shape           = "VM.Standard.E2.1.Micro"
+instance_name            = "basic-platform-vm1"
+boot_volume_size_in_gbs  = 50
+boot_volume_name         = "basic-platform-vm1-boot"
+block_volume_size_in_gbs = 5
+block_volume_name        = "basic-platform-vm1-data"
