@@ -10,10 +10,10 @@ resource "oci_core_instance" "basic_platform_vm1" {
     }
 
     source_details {
-        source_type              = "image"
-        image_id                 = data.oci_core_images.latest_ol.id
         boot_volume_size_in_gbs = var.boot_volume_size_in_gbs
-        boot_volume_display_name = var.boot_volume_name
+        boot_volume_vpus_per_gb = var.boot_volume_vpus_per_gb
+        source_type              = "image"
+        image_id                 = var.linux_ol95
     }
 
     metadata = {
