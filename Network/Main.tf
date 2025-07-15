@@ -36,4 +36,6 @@ resource "oci_core_subnet" "public_subnet" {
   route_table_id      = oci_core_route_table.public_rt.id
   dns_label           = "public"
   prohibit_public_ip_on_vnic = false
+  security_list_ids = [oci_core_security_list.public_sec_list.id]
+
 }
