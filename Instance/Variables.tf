@@ -1,13 +1,13 @@
 variable "compartment_ocid" {
-    default = ""
+    default = "ocid1.compartment.oc1..aaaaaaaajzauiwdqmhulsdzco7zmwdeiz54foiecsnteo2ztmip42dhbcaja"
 }
 
 variable "availability_domain" {
-    default = ""
+    default = "ap-sydney-1-AD-1"
 }
 
 variable "subnet_ocid" {
-    default = ""
+    default = "ap-sydney-1-AD-1"
 }
 
 variable "instance_shape" {
