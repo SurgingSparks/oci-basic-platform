@@ -21,7 +21,9 @@ variable "instance_name" {
 variable "boot_volume_size_in_gbs" {
     default = 50
 }
-
+variable "boot_volume_vpus_per_gb"{
+    default = 10
+}
 variable "boot_volume_name" {
     default = "basic-platform-vm1-boot"
 }
