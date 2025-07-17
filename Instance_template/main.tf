@@ -1,5 +1,7 @@
-resource "oci_core_instance" "basic_platform_vm1" {
-  agent_config {
+provider "oci" {}
+
+resource "oci_core_instance" "generated_oci_core_instance" {
+	agent_config {
 		is_management_disabled = "false"
 		is_monitoring_disabled = "false"
 		plugins_config {
@@ -51,7 +53,7 @@ resource "oci_core_instance" "basic_platform_vm1" {
 			name = "Cloud Guard Workload Protection"
 		}
 		plugins_config {
-			desired_state = "ENABLED"
+			desired_state = "DISABLED"
 			name = "Block Volume Management"
 		}
 		plugins_config {
@@ -59,27 +61,24 @@ resource "oci_core_instance" "basic_platform_vm1" {
 			name = "Bastion"
 		}
 	}
-  	availability_config {
+	availability_config {
 		recovery_action = "RESTORE_INSTANCE"
 	}
-    availability_domain = var.availability_domain
-    compartment_id      = var.compartment_ocid
-
-    create_vnic_details {
-        subnet_id        = var.subnet_ocid
-        assign_public_ip = true
-        private_ip = "10.42.0.10"
-    }
-    display_name = var.instance_name
-    shape = var.instance_shape
-    source_details {
-        boot_volume_vpus_per_gb = var.boot_volume_vpus_per_gb
-        boot_volume_size_in_gbs = var.boot_volume_size_in_gbs
-        source_type = "image"
-        source_id = var.linux_ol96
-    }
-    is_pv_encryption_in_transit_enabled = "true"
-  	launch_volume_attachments {
+	availability_domain = "gloC:AP-SYDNEY-1-AD-1"
+	compartment_id = "ocid1.compartment.oc1..aaaaaaaajzauiwdqmhulsdzco7zmwdeiz54foiecsnteo2ztmip42dhbcaja"
+	create_vnic_details {
+		assign_ipv6ip = "false"
+		assign_private_dns_record = "true"
+		assign_public_ip = "true"
+		private_ip = "10.42.0.10"
+		subnet_id = "ocid1.subnet.oc1.ap-sydney-1.aaaaaaaawkqfehmuvpd7ymvw7canszq2qsck3gilpzfn3kke3ai6nhzt3hja"
+	}
+	display_name = "basic-plateform-vm1"
+	instance_options {
+		are_legacy_imds_endpoints_disabled = "false"
+	}
+	is_pv_encryption_in_transit_enabled = "true"
+	launch_volume_attachments {
 		device = "/dev/oracleoci/oraclevdb"
 		display_name = "basic-platform-vm1-data"
 		is_read_only = "false"
@@ -93,8 +92,14 @@ resource "oci_core_instance" "basic_platform_vm1" {
 		}
 		type = "paravirtualized"
 	}
-
-    metadata = {
-        ssh_authorized_keys = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0wsyPj1mDF65dw9FcQSVP3pkW6xUsxhtWyH3czobkURrGka6ZUb5GEZP9fMZ/JP3iYweUbBxi7uON5WExo3J7BOf+yFTV1/9v6yQg3wOcUsvUbblXEsUL/CT6ehyrVVO4BDCr0g+q0Ir1sYwN5ILhAT3P1NDDOyl8GlgVL0K5+m6F7PYLx5Qs9upFAhrUXpjz7Ooz3Nw3EbDhivZJeMvXkX0BLjUS4SKaIzi9gAje3ZCvMg8C6xuTu1wDWwGOJglbhM8xOsphFLcXtr3pG9QzCMWQIRcx+5X8Y1jRCGmOyWZPcr9sIIf4WRNRtFTrQHmcSyK85o9weMWYOomxuV"
-    }
+	metadata = {
+		"ssh_authorized_keys" = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpyDicYVhqV4OSJbMKG9MuUW5pA2I7mw7yAU3OzxU3QQjaHXVmhPYTXzh+IGFVsXn5tnIkPMC3jtNNwDSTDy54DFNVUSbi6oJISofXnjVL25VIvSg7MQYeAZgfhbzopgF6UZOElKgvaw99QypiBkenSkko0T7jef3UOpzyj0Q1j8L4k3gEL1tFmXsgnGD7/TGcXJRc4J7WwQqUH8/SVlLXS33l7IwPgr4giBCk30d0dnaJEiYDNGk0aB0C9UXBZdK3sjg4syFvjiOpbCUcZVV8jok8cbNO2Hw/4yxfhTEN635u+xmDwWtOfwnqrAazwn5Umuh+L1jUmNYTZsuPyMvN ssh-key-2025-07-15"
+	}
+	shape = "VM.Standard.E2.1.Micro"
+	source_details {
+		boot_volume_size_in_gbs = "50"
+		boot_volume_vpus_per_gb = "10"
+		source_id = "ocid1.image.oc1.ap-sydney-1.aaaaaaaa7l5t44goumyeu2ahf6cknh5lkfcetwzdagl5tj6e7gsoyjhdt7sa"
+		source_type = "image"
+	}
 }
