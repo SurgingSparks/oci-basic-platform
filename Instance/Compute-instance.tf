@@ -51,7 +51,7 @@ resource "oci_core_instance" "basic_platform_vm1" {
 			name = "Cloud Guard Workload Protection"
 		}
 		plugins_config {
-			desired_state = "DISABLED"
+			desired_state = "ENABLED"
 			name = "Block Volume Management"
 		}
 		plugins_config {
