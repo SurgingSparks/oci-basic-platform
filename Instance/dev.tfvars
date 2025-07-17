@@ -1,9 +1,0 @@
-compartment_ocid         = "ocid1.compartment.oc1..aaaaaaaajzauiwdqmhulsdzco7zmwdeiz54foiecsnteo2ztmip42dhbcaja"
-availability_domain      = "gloC:AP-SYDNEY-1-AD-1"
-subnet_ocid              = "ocid1.subnet.oc1.ap-sydney-1.aaaaaaaawkqfehmuvpd7ymvw7canszq2qsck3gilpzfn3kke3ai6nhzt3hja"
-instance_shape           = "VM.Standard.E2.1.Micro"
-instance_name            = "basic-platform-vm1"
-boot_volume_size_in_gbs  = 50
-boot_volume_name         = "basic-platform-vm1-boot"
-block_volume_size_in_gbs = 5
-block_volume_name        = "basic-platform-vm1-data"

@@ -1,0 +1,8 @@
+availability_domain                 = "gloC:AP-SYDNEY-1-AD-1"
+compartment_id                      = "ocid1.compartment.oc1..aaaaaaaajzauiwdqmhulsdzco7zmwdeiz54foiecsnteo2ztmip42dhbcaja"
+display_name                        = "basic-platform-vm1"
+shape                               = "VM.Standard.E2.1.Micro"
+subnet_id                           = "ocid1.subnet.oc1.ap-sydney-1.aaaaaaaawkqfehmuvpd7ymvw7canszq2qsck3gilpzfn3kke3ai6nhzt3hja"
+private_ip                          = "10.42.0.10"
+ssh_authorized_keys                 = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpyDicYVhqV4OSJbMKG9MuUW5pA2I7mw7yAU3OzxU3QQjaHXVmhPYTXzh+IGFVsXn5tnIkPMC3jtNNwDSTDy54DFNVUSbi6oJISofXnjVL25VIvSg7MQYeAZgfhbzopgF6UZOElKgvaw99QypiBkenSkko0T7jef3UOpzyj0Q1j8L4k3gEL1tFmXsgnGD7/TGcXJRc4J7WwQqUH8/SVlLXS33l7IwPgr4giBCk30d0dnaJEiYDNGk0aB0C9UXBZdK3sjg4syFvjiOpbCUcZVV8jok8cbNO2Hw/4yxfhTEN635u+xmDwWtOfwnqrAazwn5Umuh+L1jUmNYTZsuPyMvN ssh-key-2025-07-15"
+source_image_id                     = "ocid1.image.oc1.ap-sydney-1.aaaaaaaa7l5t44goumyeu2ahf6cknh5lkfcetwzdagl5tj6e7gsoyjhdt7sa"
