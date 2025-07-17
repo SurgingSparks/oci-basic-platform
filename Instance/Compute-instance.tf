@@ -73,7 +73,7 @@ resource "oci_core_instance" "basic_platform_vm1" {
     display_name = var.instance_name
     shape = var.instance_shape
     source_details {
-        boot_volume_vpus_per_gb = var.
+        boot_volume_vpus_per_gb = var.boot_volume_vpus_per_gb
         boot_volume_size_in_gbs = var.boot_volume_size_in_gbs
         source_type = "image"
         source_id = var.linux_ol96
