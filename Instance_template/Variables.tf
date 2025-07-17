@@ -1,41 +1,48 @@
 variable "availability_domain" {
   description = "The AD (Availability Domain) where the instance will be launched."
   type        = string
+  default     = "gloC:AP-SYDNEY-1-AD-1"
 }
 
 variable "compartment_id" {
   description = "The OCID of the compartment to create resources in."
   type        = string
+  default     = "ocid1.compartment.oc1..aaaaaaaajzauiwdqmhulsdzco7zmwdeiz54foiecsnteo2ztmip42dhbcaja"
 }
 
 variable "display_name" {
   description = "The display name of the instance."
   type        = string
+  default     = "basic-platform-vm1"
 }
 
 variable "shape" {
-  description = "The compute shape of the instance (e.g., VM.Standard.E2.1.Micro)."
+  description = "The compute shape of the instance."
   type        = string
+  default     = "VM.Standard.E2.1.Micro"
 }
 
 variable "subnet_id" {
   description = "The OCID of the subnet to attach the VNIC."
   type        = string
+  default     = "ocid1.subnet.oc1.ap-sydney-1.aaaaaaaawkqfehmuvpd7ymvw7canszq2qsck3gilpzfn3kke3ai6nhzt3hja"
 }
 
 variable "private_ip" {
   description = "Static private IP address to assign to the primary VNIC."
   type        = string
+  default     = "10.42.0.10"
 }
 
 variable "ssh_authorized_keys" {
   description = "SSH public key to inject into the instance metadata."
   type        = string
+  default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpyDicYVhqV4OSJbMKG9MuUW5pA2I7mw7yAU3OzxU3QQjaHXVmhPYTXzh+IGFVsXn5tnIkPMC3jtNNwDSTDy54DFNVUSbi6oJISofXnjVL25VIvSg7MQYeAZgfhbzopgF6UZOElKgvaw99QypiBkenSkko0T7jef3UOpzyj0Q1j8L4k3gEL1tFmXsgnGD7/TGcXJRc4J7WwQqUH8/SVlLXS33l7IwPgr4giBCk30d0dnaJEiYDNGk0aB0C9UXBZdK3sjg4syFvjiOpbCUcZVV8jok8cbNO2Hw/4yxfhTEN635u+xmDwWtOfwnqrAazwn5Umuh+L1jUmNYTZsuPyMvN ssh-key-2025-07-15"
 }
-
 variable "source_image_id" {
   description = "The OCID of the image to launch the instance from."
   type        = string
+  default     = "ocid1.image.oc1.ap-sydney-1.aaaaaaaa7l5t44goumyeu2ahf6cknh5lkfcetwzdagl5tj6e7gsoyjhdt7sa"
 }
 
 variable "boot_volume_size_in_gbs" {
