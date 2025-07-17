@@ -9,7 +9,7 @@ resource "oci_core_volume" "vol-basic-platform-vm1-logs" {
 
 resource "oci_core_volume_attachment" "vola-basic-platform-vm1-logs" {
   attachment_type = "paravirtualized"
-  instance_id = oci_core_instance.generated_oci_core_instance.id
+  instance_id = oci_core_instance.basic_platform_vm1.id
   volume_id = oci_core_volume.vol-basic-platform-vm1-logs.id
   device = var.basic_platform_vm1_logs_attachment_device
   display_name = var.basic_platform_vm1_logs_attachment_display_name
