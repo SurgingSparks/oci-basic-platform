@@ -1,6 +1,6 @@
 provider "oci" {}
 
-resource "oci_core_instance" "generated_oci_core_instance" {
+resource "oci_core_instance" "basic_platform_vm1" {
   agent_config {
     is_management_disabled  = var.is_management_disabled
     is_monitoring_disabled  = var.is_monitoring_disabled

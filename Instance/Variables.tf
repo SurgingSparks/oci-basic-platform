@@ -1,3 +1,4 @@
+#instance
 variable "availability_domain" {
   description = "The AD (Availability Domain) where the instance will be launched."
   type        = string
@@ -39,6 +40,7 @@ variable "ssh_authorized_keys" {
   type        = string
   default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpyDicYVhqV4OSJbMKG9MuUW5pA2I7mw7yAU3OzxU3QQjaHXVmhPYTXzh+IGFVsXn5tnIkPMC3jtNNwDSTDy54DFNVUSbi6oJISofXnjVL25VIvSg7MQYeAZgfhbzopgF6UZOElKgvaw99QypiBkenSkko0T7jef3UOpzyj0Q1j8L4k3gEL1tFmXsgnGD7/TGcXJRc4J7WwQqUH8/SVlLXS33l7IwPgr4giBCk30d0dnaJEiYDNGk0aB0C9UXBZdK3sjg4syFvjiOpbCUcZVV8jok8cbNO2Hw/4yxfhTEN635u+xmDwWtOfwnqrAazwn5Umuh+L1jUmNYTZsuPyMvN ssh-key-2025-07-15"
 }
+
 variable "source_image_id" {
   description = "The OCID of the image to launch the instance from."
   type        = string
@@ -97,4 +99,54 @@ variable "are_legacy_imds_endpoints_disabled" {
   description = "Disable legacy IMDS endpoints for instance metadata."
   type        = bool
   default     = false
+}
+
+# storage
+
+variable "basic_platform_vm1_logs_volume_display_name" {
+  description = "Display name for the logs block volume."
+  type        = string
+  default     = "vol-basic-platform-vm1-logs"
+}
+
+variable "basic_platform_vm1_logs_volume_size_in_gbs" {
+  description = "Size of the logs block volume in GB."
+  type        = number
+  default     = 50
+}
+
+variable "basic_platform_vm1_logs_volume_vpus_per_gb" {
+  description = "VPUs per GB for the logs block volume."
+  type        = number
+  default     = 10
+}
+
+variable "basic_platform_vm1_logs_attachment_device" {
+  description = "Device name for the logs block volume attachment."
+  type        = string
+  default     = "/dev/oracleoci/oraclevdb"
+}
+
+variable "basic_platform_vm1_logs_attachment_display_name" {
+  description = "Display name for the logs block volume attachment."
+  type        = string
+  default     = "vola-basic-platform-vm1-logs"
+}
+
+variable "basic_platform_vm1_logs_is_read_only" {
+  description = "Whether the logs block volume attachment is read-only."
+  type        = bool
+  default     = false
+}
+
+variable "basic_platform_vm1_logs_is_shareable" {
+  description = "Whether the logs block volume attachment is shareable."
+  type        = bool
+  default     = false
+}
+
+variable "basic_platform_vm1_logs_is_pv_encryption_in_transit_enabled" {
+  description = "Enable encryption in transit for the logs block volume attachment."
+  type        = bool
+  default     = true
 }
