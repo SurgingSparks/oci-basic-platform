@@ -38,7 +38,7 @@ variable "adb_compute_count" {
 variable "adb_data_storage_size_in_tbs" {
   description = "Amount of storage allocated in TBs (min 1 TB for paid instances, but can be lower for free tier)"
   type        = number
-  default     = 0.02
+  default     = 1
 }
 
 variable "adb_free_tier" {
