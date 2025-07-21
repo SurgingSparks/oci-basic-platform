@@ -8,13 +8,13 @@ variable "compartment_id" {
 variable "adb_display_name" {
   description = "Display name of the Autonomous Database"
   type        = string
-  default     = "adb-platform-dev"
+  default     = "adb-basic-platform"
 }
 
 variable "adb_db_name" {
   description = "Database name (max 8 chars, uppercase by convention)"
   type        = string
-  default     = "ADBPLTFD"
+  default     = "ADBBPLTF"
 }
 
 variable "adb_admin_password" {
