@@ -13,3 +13,21 @@ output "basic_platform_vm1_logs_volume_id" {
 output "basic_platform_vm1_logs_volume_attachment_id" {
   value = oci_core_volume_attachment.vola-basic-platform-vm1-logs.id
 }
+output "basic_platform_vm2_instance_id" {
+  value = oci_core_instance.basic_platform_vm2.id
+}
+
+output "basic_platform_vm2_instance_public_ip" {
+  value = oci_core_instance.basic_platform_vm2.public_ip
+}
+
+output "basic_platform_vm2_instance_private_ip" {
+  value = oci_core_instance.basic_platform_vm2.private_ip
+}
+output "basic_platform_vm2_logs_volume_id" {
+  value = oci_core_volume.vol-basic-platform-vm2-logs.id
+}
+
+output "basic_platform_vm2_logs_volume_attachment_id" {
+  value = oci_core_volume_attachment.vola-basic-platform-vm2-logs.id
+}

@@ -29,7 +29,7 @@ variable "subnet_id" {
   default     = "ocid1.subnet.oc1.ap-sydney-1.aaaaaaaawkqfehmuvpd7ymvw7canszq2qsck3gilpzfn3kke3ai6nhzt3hja"
 }
 
-variable "private_ip" {
+variable "basic_platform_vm1_private_ip" {
   description = "Static private IP address to assign to the primary VNIC."
   type        = string
   default     = "10.42.0.10"
@@ -101,7 +101,21 @@ variable "are_legacy_imds_endpoints_disabled" {
   default     = false
 }
 
-# storage
+#vm2
+variable "basic_platform_vm2_display_name" {
+  description = "The display name of the VM2 instance."
+  type        = string
+  default     = "basic-platform-vm2"
+}
+
+variable "basic_platform_vm2_private_ip" {
+  description = "Static private IP address for VM2."
+  type        = string
+  default     = "10.42.0.11"
+}
+
+
+# vm1 storage
 
 variable "basic_platform_vm1_logs_volume_display_name" {
   description = "Display name for the logs block volume."
@@ -147,6 +161,55 @@ variable "basic_platform_vm1_logs_is_shareable" {
 
 variable "basic_platform_vm1_logs_is_pv_encryption_in_transit_enabled" {
   description = "Enable encryption in transit for the logs block volume attachment."
+  type        = bool
+  default     = true
+}
+
+#vm2 storage
+variable "basic_platform_vm2_logs_volume_display_name" {
+  description = "Display name for the VM2 logs block volume."
+  type        = string
+  default     = "vol-basic-platform-vm2-logs"
+}
+
+variable "basic_platform_vm2_logs_volume_size_in_gbs" {
+  description = "Size of the VM2 logs block volume in GB."
+  type        = number
+  default     = 50
+}
+
+variable "basic_platform_vm2_logs_volume_vpus_per_gb" {
+  description = "VPUs per GB for the VM2 logs block volume."
+  type        = number
+  default     = 10
+}
+
+variable "basic_platform_vm2_logs_attachment_device" {
+  description = "Device name for the VM2 logs block volume attachment."
+  type        = string
+  default     = "/dev/oracleoci/oraclevdc"
+}
+
+variable "basic_platform_vm2_logs_attachment_display_name" {
+  description = "Display name for the VM2 logs block volume attachment."
+  type        = string
+  default     = "vola-basic-platform-vm2-logs"
+}
+
+variable "basic_platform_vm2_logs_is_read_only" {
+  description = "Whether the VM2 logs block volume attachment is read-only."
+  type        = bool
+  default     = false
+}
+
+variable "basic_platform_vm2_logs_is_shareable" {
+  description = "Whether the VM2 logs block volume attachment is shareable."
+  type        = bool
+  default     = false
+}
+
+variable "basic_platform_vm2_logs_is_pv_encryption_in_transit_enabled" {
+  description = "Enable encryption in transit for the VM2 logs block volume attachment."
   type        = bool
   default     = true
 }
