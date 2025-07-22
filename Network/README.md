@@ -25,3 +25,11 @@ Example `dev.tfvars`:
 ```hcl
 compartment_ocid = "ocid1.compartment.oc1..your_compartment_ocid"
 region           = "ap-sydney-1"
+
+
+
+to do:
+add drg
+add nsgs 
+add lb
+add waf
